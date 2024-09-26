@@ -11,12 +11,12 @@ void ConstructCoinbaseTx(const blocktemplate_t& blocktemplate, const std::pair<A
     hash_digest prev_txid1;
     decode_base16(prev_txid1, "0000000000000000000000000000000000000000000000000000000000000000");
     uint32_t input_index1 = 0xffffffff;
-	output_point vin1(prev_txid1, input_index1);
+    output_point vin1(prev_txid1, input_index1);
 	
-	//make Input
-	input input1 = input();
-	input1.set_previous_output(vin1);
-	input1.set_sequence(0xffffffff);
+    //make Input
+    input input1 = input();
+    input1.set_previous_output(vin1);
+    input1.set_sequence(0xffffffff);
 
     uint64_t output_value1 = blocktemplate.coinbasevalue;
 
@@ -81,8 +81,8 @@ void ConstructCoinbaseTx(const blocktemplate_t& blocktemplate, const std::pair<A
     hash_digest sig1;
     decode_base16(sig1, "0000000000000000000000000000000000000000000000000000000000000000");
     data_stack witness1; 
-	witness1.push_back(to_chunk(sig1));
-	witness txinwitness1(witness1);
+    witness1.push_back(to_chunk(sig1));
+    witness txinwitness1(witness1);
 
     (*tx).inputs()[0].set_script(coinbase_scriptSig);
     (*tx).inputs()[0].set_witness(txinwitness1);
