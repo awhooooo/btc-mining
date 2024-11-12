@@ -15,6 +15,7 @@
 
 #include <json/json.h>
 
+static const size_t WITNESS_COMMITMENT_SIZE = 38;
 static const size_t BLOCK_HEADER_SIZE = 80;
 static const size_t SHA256_OUTPUT_SIZE = 32;
 static const size_t VERSION_SIZE = 4;

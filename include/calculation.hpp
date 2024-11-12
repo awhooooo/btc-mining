@@ -71,6 +71,7 @@ class CBlockHeaderCalculation
         void SetMerkleRoot();
         byte_array<SHA256_OUTPUT_SIZE> CalculateMerkleRoot(std::vector<byte_array<SHA256_OUTPUT_SIZE>>& txlist);
         byte_array<SHA256_OUTPUT_SIZE> CalculateMerkleRoot(const std::vector<std::string>& txlist);
+        data_chunk CalculateWitnessCommitment();
 
         std::string MakeNextBlock(const byte_array<BLOCK_HEADER_SIZE>& blockheader, const transaction& coinbase_tx, const blocktemplate_t& blocktemplate);
         void StartMining();

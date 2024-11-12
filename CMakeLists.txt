@@ -46,6 +46,7 @@ find_library(Boost_PROGRAM_OPTIONS_LIBRARIES
 # Find the libraries installed via Homebrew
 find_library(L_SPDLOG spdlog HINTS /opt/homebrew/Cellar/spdlog/1.14.1/lib)
 find_library(L_FMT fmt HINTS /opt/homebrew/Cellar/fmt/10.2.1_1/lib)
+find_library(L_GMP gmp HINTS /opt/homebrew/Cellar/gmp/6.3.0/lib)
 find_library(L_JSONCPP jsoncpp HINTS /opt/homebrew/Cellar/json/1.9.5/lib)
 find_library(L_JSONRPC_CPP_CLIENT jsonrpccpp-client HINTS /opt/homebrew/Cellar/libjson-rpc-cpp/1.4.1_2/lib)
 find_library(L_JSONRPC_CPP_COMMON jsonrpccpp-common HINTS /opt/homebrew/Cellar/libjson-rpc-cpp/1.4.1_2/lib)
@@ -59,6 +60,7 @@ message(STATUS "Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
 message(STATUS "Boost_LIBRARIES: ${Boost_LIBRARIES}")
 message(STATUS "L_SPDLOG: ${L_SPDLOG}")
 message(STATUS "L_FMT: ${L_FMT}")
+message(STATUS "L_GMP: ${L_GMP}")
 message(STATUS "L_JSONCPP: ${L_JSONCPP}")
 message(STATUS "L_JSONRPC_CPP_CLIENT: ${L_JSONRPC_CPP_CLIENT}")
 message(STATUS "L_JSONRPC_CPP_COMMON: ${L_JSONRPC_CPP_COMMON}")
@@ -102,6 +104,7 @@ target_link_libraries(miner PRIVATE
     ${Boost_PROGRAM_OPTIONS_LIBRARIES}
     ${L_SPDLOG}
     ${L_FMT}
+    ${L_GMP}
     ${L_JSONCPP}
     ${L_JSONRPC_CPP_CLIENT}
     ${L_JSONRPC_CPP_COMMON}
@@ -116,6 +119,7 @@ target_include_directories(miner PRIVATE
     /opt/homebrew/Cellar/nlohmann-json/3.11.3/include
     /opt/homebrew/Cellar/spdlog/1.14.1/include
     /opt/homebrew/Cellar/fmt/10.2.1_1/include
+    /opt/homebrew/Cellar/gmp/6.3.0/include
     /opt/homebrew/Cellar/json/1.9.5/include
     /opt/homebrew/Cellar/libjson-rpc-cpp/1.4.1_2/include
     /opt/homebrew/opt

@@ -59,6 +59,8 @@ void ConstructCoinbaseTx(const blocktemplate_t& blocktemplate, const std::pair<A
 
     (*tx).inputs().clear();
     (*tx).outputs().clear();
+    (*tx).inputs().reserve(1);
+    (*tx).outputs().reserve(2);
 
     (*tx).inputs().push_back(input1);
     (*tx).outputs().push_back(output1);
